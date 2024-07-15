@@ -5,7 +5,7 @@ class Users {
     const user = await usersModel.findOne(query).select(projection)
     return user
   }
-  async getAllUsers(query, projection = {}) {
+  async getAllUsers() {
     const users = await usersModel.find().select();
     return users
   }
@@ -13,13 +13,12 @@ class Users {
   async addNewUser(user) {
     console.log("tst");
     try {
-
-      await usersModel.create(user);
+      await usersModel.insertMany([user]);
     }
     catch(err){
       console.log(err);
     }
-    return getAllUsers();
+    return;
   }
 }
 

@@ -41,5 +41,4 @@ module.exports.init = async () => {
     role:USER_ROLES.WORKER
   };
   let c = addNewUser(newUser);
-  console.log("AWWPPP" + JSON.stringify(a));
 }

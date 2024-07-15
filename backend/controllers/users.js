@@ -21,9 +21,9 @@ exports.getUserById = async ctx => {
 exports.getAllUsers = async ctx => {
   try {
     console.log(1)
-    const users = await users.getAllUsers()
+    const usersFound = await users.getAllUsers()
     ctx.status = 200
-    ctx.body = users
+    ctx.body = usersFound
   } catch (err) {
     ctx.status = err.status || 500
     ctx.message = err.message || 'Internal server error'

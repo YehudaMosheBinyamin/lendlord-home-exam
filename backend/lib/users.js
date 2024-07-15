@@ -16,7 +16,6 @@ class Users {
   }
   async addNewUser(user){
       const users = await this.repo.addNewUser(user);
-      console.log("tst");
   }
 }
 
