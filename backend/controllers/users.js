@@ -18,10 +18,29 @@ exports.getUserById = async ctx => {
     ctx.message = err.message || 'Internal server error'
   }
 }
+exports.getAllUsers = async ctx => {
+  try {
+    console.log(1)
+    const users = await users.getAllUsers()
+    ctx.status = 200
+    ctx.body = users
+  } catch (err) {
+    ctx.status = err.status || 500
+    ctx.message = err.message || 'Internal server error'
+  }
+}
 
 async function initialize() {
   await users.initialize();
 }
-
-
+exports.addNewUser = async user =>  {
+  try {
+    await users.addNewUser(user);
+    return 1;
+  }
+  catch (error) {
+    console.log("User addition failed" + error);
+    return -1;
+  }
+}
 initialize()

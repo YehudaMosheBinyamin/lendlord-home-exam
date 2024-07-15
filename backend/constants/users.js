@@ -3,5 +3,4 @@ const USER_ROLES = {
   WORKER: 'worker',
   DRIVER: 'driver'
 }
-
 module.exports = { USER_ROLES }
